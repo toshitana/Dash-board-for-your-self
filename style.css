@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #282c34;
+    --lane-bg-color: #3e4451;
+    --task-bg-color: #4a5162;
+    --highlight-color: #61afef;
+    --text-color: #abb2bf;
+    --font-family: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: transparent; /* Electronでウィンドウを透過させるため */
+    color: var(--text-color);
+    overflow: hidden; /* スクロールバーを非表示 */
+}
+
+#app {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(40, 44, 52, 0.85); /* 少し透過させる */
+    border-radius: 8px;
+    height: 100vh;
+}
+
+.lane {
+    flex: 1;
+    margin: 0 5px;
+    background-color: var(--lane-bg-color);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lane h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.tasks {
+    flex-grow: 1;
+    min-height: 100px;
+    overflow-y: auto;
+}
+
+/* スクロールバーのスタイル */
+.tasks::-webkit-scrollbar {
+    width: 8px;
+}
+.tasks::-webkit-scrollbar-track {
+    background: var(--lane-bg-color);
+}
+.tasks::-webkit-scrollbar-thumb {
+    background: var(--task-bg-color);
+    border-radius: 4px;
+}
+.tasks::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+}
+
+
+.task {
+    background-color: var(--task-bg-color);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    cursor: grab;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task.dragging {
+    opacity: 0.5;
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.delete-task-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.1em;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.task:hover .delete-task-btn {
+    opacity: 1;
+}
+
+.add-task-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--task-bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.add-task-btn:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Doingレーンのハイライト */
+#doing-lane {
+    background-color: #4b5162; /* 少し明るい背景色 */
+}
+
+#doing-lane .task {
+    border-left: 3px solid var(--highlight-color);
+}
