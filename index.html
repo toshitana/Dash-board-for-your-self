@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Focus Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ToDo Lane -->
+        <div class="lane" id="todo-lane">
+            <h2>ToDo</h2>
+            <div class="tasks" id="todo-tasks" data-lane="todo">
+                <!-- サンプルタスク -->
+                <div class="task" draggable="true" data-id="task-1">
+                    <span class="task-content" contenteditable="false">仕様書を読む</span>
+                    <button class="delete-task-btn">×</button>
+                </div>
+            </div>
+            <div class="task-input-form" style="display: none;">
+                <input type="text" placeholder="新しいタスクを入力...">
+                <button class="confirm-add-btn">追加</button>
+            </div>
+            <button class="add-task-btn" data-lane="todo">+</button>
+        </div>
+
+        <!-- Doing Lane -->
+        <div class="lane" id="doing-lane">
+            <h2>Doing</h2>
+            <div class="tasks" id="doing-tasks" data-lane="doing">
+                 <!-- サンプルタスク -->
+                 <div class="task" draggable="true" data-id="task-2">
+                    <span class="task-content" contenteditable="false">UIを実装する</span>
+                    <button class="delete-task-btn">×</button>
+                </div>
+            </div>
+            <div class="task-input-form" style="display: none;">
+                <input type="text" placeholder="新しいタスクを入力...">
+                <button class="confirm-add-btn">追加</button>
+            </div>
+            <button class="add-task-btn" data-lane="doing">+</button>
+        </div>
+
+        <!-- Done Lane -->
+        <div class="lane" id="done-lane">
+            <h2>Done</h2>
+            <div class="tasks" id="done-tasks" data-lane="done">
+                 <!-- サンプルタスク -->
+                 <div class="task" draggable="true" data-id="task-3">
+                    <span class="task-content" contenteditable="false">プロジェクトをセットアップする</span>
+                    <button class="delete-task-btn">×</button>
+                </div>
+            </div>
+             <div class="task-input-form" style="display: none;">
+                <input type="text" placeholder="新しいタスクを入力...">
+                <button class="confirm-add-btn">追加</button>
+            </div>
+            <button class="add-task-btn" data-lane="done">+</button>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>

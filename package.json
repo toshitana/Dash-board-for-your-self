@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Dash board for your self",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toshitana/Dash-board-for-your-self.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/toshitana/Dash-board-for-your-self/issues"
+  },
+  "homepage": "https://github.com/toshitana/Dash-board-for-your-self#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "electron": "^38.4.0",
+    "electron-builder": "^26.0.12",
+    "spectron": "^19.0.0"
+  },
+  "dependencies": {
+    "electron-store": "^11.0.2"
+  }
+}
